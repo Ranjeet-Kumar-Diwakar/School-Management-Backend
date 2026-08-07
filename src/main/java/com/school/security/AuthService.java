@@ -1,5 +1,7 @@
 package com.school.security;
 
+import java.util.Set;
+
 import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,10 @@ import org.springframework.stereotype.Service;
 import com.school.Entity.User;
 import com.school.dto.LoginRequest;
 import com.school.dto.LoginResponse;
+import com.school.enums.Permission;
+import com.school.enums.Role;
 import com.school.payload.ApiResponse;
+import com.school.service.RolePermissionService;
 
 @Service
 public class AuthService {
@@ -37,9 +42,12 @@ public class AuthService {
 			User user = userDetails.getUser();
 		
 			String token = jwtUtils.generateAceessToken(user);
-			
+				
+			System.out.println(user.getRole());
+			Set<Permission> permission = RolePermissionService.ROLE_PERMISSION.get(Role.valueOf(user.getRole()));
+			System.out.println(RolePermissionService.ROLE_PERMISSION);
 		
-		return new LoginResponse(true, "login Success", token);
+		return new LoginResponse(true, "login Success", token, permission);
 	}
 
 	

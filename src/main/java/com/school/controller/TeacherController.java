@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.school.Entity.User;
+import com.school.dto.LoginResponse;
 import com.school.repository.UserRepository;
 
 @RestController
@@ -24,4 +25,6 @@ public class TeacherController {
 		
 		return allUsers;
 	}
+	
+	
 }
