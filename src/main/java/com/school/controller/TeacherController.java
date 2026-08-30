@@ -20,6 +20,7 @@ public class TeacherController {
 	
 	@GetMapping("/all-users")
 	public List<User> getAllUsers(){
+		System.out.println("fetching all users....");
 		System.out.println("get all user running..");
 		List<User> allUsers = userRepo.findAll();
 		

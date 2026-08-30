@@ -36,10 +36,9 @@ public class SecurityConfig {
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 				.authorizeHttpRequests(auth -> auth
 					.requestMatchers("/api/public/**").permitAll()
-					.requestMatchers("/api/public/user/**").hasRole("USER")
-					.requestMatchers("/api/public/admin/**").hasRole("ADMIN")
 					.anyRequest().authenticated()
 				)
+				
 				.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 				
 				.formLogin(login-> login.disable())

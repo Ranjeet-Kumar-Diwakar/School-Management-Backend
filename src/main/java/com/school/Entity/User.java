@@ -25,9 +25,15 @@ public class User implements UserDetails {
 	private String role;
 	private String gender;
 	private String password;
+	private String profileImageUrl;
+	private String profileImagePublicId;
 	
 	
-	public User(Integer id, String name, String email, String phone, String role, String gender, String password) {
+	
+
+
+	public User(Integer id, String name, String email, String phone, String role, String gender, String password,
+			String profileImageUrl, String profileImagePublicId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,6 +42,8 @@ public class User implements UserDetails {
 		this.role = role;
 		this.gender = gender;
 		this.password = password;
+		this.profileImageUrl = profileImageUrl;
+		this.profileImagePublicId = profileImagePublicId;
 	}
 
 
@@ -115,9 +123,31 @@ public class User implements UserDetails {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	
 
 	
 	
+
+	public String getProfileImageUrl() {
+		return profileImageUrl;
+	}
+
+
+	public String getProfileImagePublicId() {
+		return profileImagePublicId;
+	}
+
+
+	public void setProfileImageUrl(String profileImageUrl) {
+		this.profileImageUrl = profileImageUrl;
+	}
+
+
+	public void setProfileImagePublicId(String profileImagePublicId) {
+		this.profileImagePublicId = profileImagePublicId;
+	}
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

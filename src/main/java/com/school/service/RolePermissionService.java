@@ -19,32 +19,32 @@ public class RolePermissionService {
 			
 			Role.ROLE_TEACHER,
 			EnumSet.of(
-						Permission.ATTENDENCE_VIEW,
-						Permission.SUBJECT_VIEW,
-						Permission.EXAMINATION_VIEW,
-						Permission.NOTICE_BOARD_VIEW,
-						Permission.CLASS_VIEW,
-						Permission.EVENTS_VIEW
+						Permission.ATTENDENCE,
+						Permission.SUBJECT,
+						Permission.EXAMINATION,
+						Permission.NOTICEBOARD,
+						Permission.CLASS,
+						Permission.EVENTS
 			),
 			
 			Role.ROLE_STUDENT,
 			EnumSet.of(
-						Permission.ATTENDENCE_VIEW,
-						Permission.EXAMINATION_VIEW,
-						Permission.NOTICE_BOARD_VIEW,
-						Permission.FEES_VIEW,
-						Permission.EVENTS_VIEW
+						Permission.ATTENDENCE,
+						Permission.EXAMINATION,
+						Permission.NOTICEBOARD,
+						Permission.FEES,
+						Permission.EVENTS
 						),
 			
 			Role.ROLE_PRINCIPAL,
 			EnumSet.of(
-						Permission.STUDENT_VIEW,
-						Permission.TEACHER_VIEW,
-						Permission.STAFF_VIEW,
-						Permission.CLASS_VIEW,
-						Permission.SUBJECT_VIEW,
-						Permission.ATTENDENCE_VIEW,
-						Permission.EXAMINATION_VIEW
+						Permission.STUDENT,
+						Permission.TEACHER,
+						Permission.STAFF,
+						Permission.CLASS,
+						Permission.SUBJECT,
+						Permission.ATTENDENCE,
+						Permission.EXAMINATION
 						)
 			
 			

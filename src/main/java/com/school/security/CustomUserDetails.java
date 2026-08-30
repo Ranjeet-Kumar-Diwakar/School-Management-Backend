@@ -1,6 +1,7 @@
 package com.school.security;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.jspecify.annotations.Nullable;
@@ -14,18 +15,22 @@ public class CustomUserDetails implements UserDetails{
 	
 	private User user;
 	
+	
 	// constructor
 	
 	public CustomUserDetails(User user) {
 		super();
 		this.user = user;
+//		System.out.println("customuserdetails ka user" +user.getEmail());
 	}
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-			
-		SimpleGrantedAuthority grantedAuthority = new SimpleGrantedAuthority(user.getRole());
-		return List.of(grantedAuthority);
+		System.out.println("granded authority run..");
+	    return Collections.singletonList(
+	            new SimpleGrantedAuthority(user.getRole())
+	    );
 	}
 
 	@Override
