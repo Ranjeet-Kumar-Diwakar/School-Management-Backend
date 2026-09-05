@@ -43,6 +43,8 @@ public class AuthService {
 			User user = userDetails.getUser();
 		
 			String token = jwtUtils.generateAccessToken(user);
+			
+			System.out.println("login " +token);
 				
 			System.out.println(user.getRole());
 			Set<Permission> permission = RolePermissionService.ROLE_PERMISSION.get(Role.valueOf(user.getRole()));

@@ -127,6 +127,7 @@ public class JwtUtils {
 
 	public boolean validateToken(String token, UserDetails userDetails) {
 		try {
+			System.out.println("validate token " + token);
 			String username = getUsernameFromToken(token);
 			System.out.println("token wala user "+ username);
 			System.out.println("logged in user "+ userDetails.getUsername());
