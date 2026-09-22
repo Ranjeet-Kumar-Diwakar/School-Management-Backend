@@ -2,15 +2,15 @@ package com.school.enums;
 
 public enum Role {
 	
-	ROLE_ADMIN,
+	ADMIN,
 
-    ROLE_PRINCIPAL,
+    PRINCIPAL,
 
-    ROLE_TEACHER,
+    TEACHER,
 
-    ROLE_STUDENT,
+    STUDENT,
 
-    ROLE_PARENT,
+    PARENT,
 
-    ROLE_LIBRARIAN
+    LIBRARIAN
 }

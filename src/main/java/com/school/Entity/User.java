@@ -18,7 +18,7 @@ public class User implements UserDetails {
 
 	@Id
 	private Integer id;
-	
+	private int rollNumber;
 	private String name;
 	private String email;
 	private String phone;
@@ -31,11 +31,10 @@ public class User implements UserDetails {
 	
 	
 
-
-	public User(Integer id, String name, String email, String phone, String role, String gender, String password,
-			String profileImageUrl, String profileImagePublicId) {
-		super();
+	public User(Integer id, int rollNumber, String name, String email, String phone, String role, String gender,
+			String password, String profileImageUrl, String profileImagePublicId) {
 		this.id = id;
+		this.rollNumber = rollNumber;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
@@ -45,6 +44,8 @@ public class User implements UserDetails {
 		this.profileImageUrl = profileImageUrl;
 		this.profileImagePublicId = profileImagePublicId;
 	}
+	
+	
 
 
 	public User() {
@@ -53,39 +54,62 @@ public class User implements UserDetails {
 	}
 
 
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public int getRollNumber() {
+		return rollNumber;
+	}
+
 	public String getName() {
 		return name;
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public String getPhone() {
 		return phone;
 	}
-
 
 	public String getRole() {
 		return role;
 	}
 
-
 	public String getGender() {
 		return gender;
 	}
-
 
 	public String getPassword() {
 		return password;
 	}
 
+	public String getProfileImageUrl() {
+		return profileImageUrl;
+	}
+
+	public String getProfileImagePublicId() {
+		return profileImagePublicId;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
 
 
 	public void setEmail(String email) {
@@ -93,61 +117,32 @@ public class User implements UserDetails {
 	}
 
 
+
+
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 
 	public void setRole(String role) {
 		this.role = role;
 	}
 
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-
-
-	public Integer getId() {
-		return id;
-	}
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	
-
-	
-	
-
-	public String getProfileImageUrl() {
-		return profileImageUrl;
-	}
-
-
-	public String getProfileImagePublicId() {
-		return profileImagePublicId;
-	}
-
 
 	public void setProfileImageUrl(String profileImageUrl) {
 		this.profileImageUrl = profileImageUrl;
 	}
 
-
 	public void setProfileImagePublicId(String profileImagePublicId) {
 		this.profileImagePublicId = profileImagePublicId;
 	}
-
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -155,9 +150,6 @@ public class User implements UserDetails {
 		return List.of();
 	}
 	
-	
-
-
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub

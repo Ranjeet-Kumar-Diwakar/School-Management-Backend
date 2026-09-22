@@ -14,10 +14,10 @@ public class RolePermissionService {
 	
 	public static final Map<Role, Set<Permission>> ROLE_PERMISSION = Map.of(
 		
-			Role.ROLE_ADMIN,  //key
+			Role.ADMIN,  //key
 			EnumSet.allOf(Permission.class), //value
 			
-			Role.ROLE_TEACHER,
+			Role.TEACHER,
 			EnumSet.of(
 						Permission.ATTENDENCE,
 						Permission.SUBJECT,
@@ -27,7 +27,7 @@ public class RolePermissionService {
 						Permission.EVENTS
 			),
 			
-			Role.ROLE_STUDENT,
+			Role.STUDENT,
 			EnumSet.of(
 						Permission.ATTENDENCE,
 						Permission.EXAMINATION,
@@ -36,7 +36,7 @@ public class RolePermissionService {
 						Permission.EVENTS
 						),
 			
-			Role.ROLE_PRINCIPAL,
+			Role.PRINCIPAL,
 			EnumSet.of(
 						Permission.STUDENT,
 						Permission.TEACHER,
